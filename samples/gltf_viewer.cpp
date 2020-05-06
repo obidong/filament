@@ -378,6 +378,11 @@ int main(int argc, char** argv) {
             loadAsset(filename);
         }
 
+        for (size_t i = 0, n = app.asset->getMaterialInstanceCount(); i < n; ++i) {
+            // GlassPlasticMat, LeatherPartsMat
+            printf("%s\n", app.asset->getMaterialInstances()[i]->getName());
+        }
+
         loadResources(filename);
 
         createGroundPlane(engine, scene, app);
