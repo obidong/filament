@@ -45,7 +45,7 @@ object KtxLoader {
     fun createTexture(engine: Engine, buffer: Buffer, options: Options = Options()): Texture {
         val nativeEngine = engine.nativeObject
         val nativeTexture = nCreateTexture(nativeEngine, buffer, buffer.remaining(), options.srgb)
-        return Texture(nativeTexture)
+        return Texture(engine, nativeTexture)
     }
 
     /**
